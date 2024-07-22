@@ -6,7 +6,7 @@ stock portfolio manager.
 usage:
 ---------------------------
 Maintains a record of shareholders holdings in various companies.
-
+It allows creation and updating of customer portfolio records.
 Author:
 ---------------------------
 Kelvin Macharia
@@ -104,27 +104,5 @@ class Portfolio:
 
 # self test code
 if __name__ == "__main__":
-    # Create a portfolio for a test client
-    portfolio = Portfolio(CLIENTS[0])
+    pass
 
-    # Buy some shares
-    portfolio.buy(COMPANIES[0]['name'], 50)
-    portfolio.buy(COMPANIES[1]['name'], 30)
-
-    # Sell some shares
-    portfolio.sell(COMPANIES[0]['name'], 100)
-
-    # Print the portfolio holdings
-    pprint.pprint(portfolio.holdings)
-
-    # Print the transaction records
-    pprint.pprint(portfolio.records)
-
-
-# Structure of the program
-# logging especially for transactions and include in the final program after bundling for inspection
-# Unittest
-# Database integration
-# Remove hardcoded data
-# make this a package
-# Packaging with pyinstaller as a CLI
