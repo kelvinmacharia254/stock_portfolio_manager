@@ -19,6 +19,9 @@ import datetime
 import pprint
 from typing import Dict, List, Any
 
+# These are a dummy list of companies and clients for testing purposes.
+# We would create other classes to onboard customers and companies but for now lets focus on the Porfolio class
+#     and utilise this list
 COMPANIES = [
     {"name": "Safaricom Plc", "initials": "SCOM:NAI"},
     {"name": "Centum Investment Company PLC", "initials": "CTUM:NAI"},
@@ -41,6 +44,11 @@ class Portfolio:
     """
 
     def __init__(self, client_details: Dict[str, Any]):
+        """
+        Onboard a client to the stock portfolio manager and initialize their empty portfolio and record of past
+        transactions.
+        :param client_details: client details
+        """
         self.client = client_details
         self.holdings: Dict[str, int] = {}  # key = company, value = number of shares
         self.records: List[Dict[str, Any]] = []  # each record is a dictionary appended to this list
@@ -104,5 +112,8 @@ class Portfolio:
 
 # self test code
 if __name__ == "__main__":
-    pass
+    p = Portfolio(CLIENTS[0])
+    print(p.holdings)
+    print(p.records)
+    print(p.client)
 
