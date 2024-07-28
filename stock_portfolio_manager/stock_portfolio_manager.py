@@ -7,6 +7,7 @@ usage:
 ---------------------------
 Maintains a record of shareholders holdings in various companies.
 It allows creation and updating of customer portfolio records.
+
 Author:
 ---------------------------
 Kelvin Macharia
@@ -20,7 +21,7 @@ import pprint
 from typing import Dict, List, Any
 
 # These are a dummy list of companies and clients for testing purposes.
-# We would create other classes to onboard customers and companies but for now lets focus on the Porfolio class
+# We would create other classes to onboard customers and companies but for now lets focus on the Portfolio class
 #     and utilise this list
 COMPANIES = [
     {"name": "Safaricom Plc", "initials": "SCOM:NAI"},
