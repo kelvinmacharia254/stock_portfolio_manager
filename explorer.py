@@ -31,6 +31,6 @@ print(portfolio1.client)
 #
 #  2. Indentify possible functionality bugs that may occur and note them down. Will handle this in details in
 #       error handling and testing topics
-#       (i).    Logical error: no control over cleint details passed through
-#       (ii).   
+#       (i).    Logical error: no control over client details passed through
+#       (ii).   No incrementation of share quantities
 

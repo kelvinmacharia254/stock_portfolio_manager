@@ -96,6 +96,7 @@ class Portfolio:
                 # record transaction
                 record = self.add_record("buying", company, shares)
                 self.records.append(record)
+                comp['available_shares'] = comp['available_shares'] - shares
             elif comp['name'] == company and comp['available_shares'] < shares:
                 print(f"Available shares are less than {shares:,.2f}")
     def sell(self, company: str, shares: int):
@@ -130,9 +131,9 @@ if __name__ == "__main__":
     print(p.records)
     print(p.client)
     p.buy("Safaricom Plc",4_000_000)
-    print(p.records)
+    p.buy("Safaricom Plc",10_000_001)
     p.buy("Safaricom Plc",5_000_000)
+    p.buy("Safaricom Plc",10_000_001)
     print(p.records)
-    p.buy("Safaricom Plc",5_000_001)
-    print(p.records)
+    print(companies[0])
 
