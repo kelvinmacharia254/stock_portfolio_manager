@@ -23,13 +23,13 @@ from typing import Dict, List, Any
 # These are a dummy list of companies and clients for testing purposes.
 # We would create other classes to onboard customers and companies but for now lets focus on the Portfolio class
 #     and utilise this list
-companies = [
+COMPANIES = [
     {"name": "Safaricom Plc", "initials": "SCOM:NAI", 'available_shares': 5_000_000},
-    {"name": "Centum Investment Company PLC", "initials": "CTUM:NAI",  'available_shares': 5_000_000},
-    {"name": "NCBA Group PLC", "initials": "NCBA:NAI",  'available_shares': 5_000_000}
+    {"name": "Centum Investment Company PLC", "initials": "CTUM:NAI", 'available_shares': 5_000_000},
+    {"name": "NCBA Group PLC", "initials": "NCBA:NAI", 'available_shares': 5_000_000}
 ]
 
-clients = [
+CLIENTS = [
     {"first_name": "Caroline", "last_name": "Ayieko"},
     {"first_name": "Rogers", "last_name": "Kiome"},
     {"first_name": "Kelvin", "last_name": "Macharia"}
@@ -86,7 +86,7 @@ class Portfolio:
         :param company: str - Name of the company
         :param shares: int - Number of shares to buy
         """
-        
+
         # check availability of stock for buying
         for comp in companies:
             if comp['name'] == company and comp['available_shares'] >= shares:
@@ -99,6 +99,7 @@ class Portfolio:
                 comp['available_shares'] = comp['available_shares'] - shares
             elif comp['name'] == company and comp['available_shares'] < shares:
                 print(f"Available shares are less than {shares:,.2f}")
+
     def sell(self, company: str, shares: int):
         """
         Summary:
@@ -130,10 +131,9 @@ if __name__ == "__main__":
     print(p.holdings)
     print(p.records)
     print(p.client)
-    p.buy("Safaricom Plc",4_000_000)
-    p.buy("Safaricom Plc",10_000_001)
-    p.buy("Safaricom Plc",5_000_000)
-    p.buy("Safaricom Plc",10_000_001)
+    p.buy("Safaricom Plc", 4_000_000)
+    p.buy("Safaricom Plc", 10_000_001)
+    p.buy("Safaricom Plc", 5_000_000)
+    p.buy("Safaricom Plc", 10_000_001)
     print(p.records)
     print(companies[0])
-
